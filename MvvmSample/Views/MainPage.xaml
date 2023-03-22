@@ -16,6 +16,11 @@
             ItemsSource="{Binding Students}">
             <CollectionView.EmptyView>
                 <StackLayout HorizontalOptions="Center">
+                    <Image
+                        BackgroundColor="Transparent"
+                        HeightRequest="80"
+                        Source="robot.jpg"
+                        WidthRequest="80" />
                     <Label Text="Ohhhhh.....Sad..." />
                 </StackLayout>
             </CollectionView.EmptyView>

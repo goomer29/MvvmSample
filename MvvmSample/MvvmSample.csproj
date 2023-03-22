@@ -61,6 +61,7 @@
 	  <None Remove="Resources\Images\ofek.jpg" />
 	  <None Remove="Resources\Images\ofekman.jpg" />
 	  <None Remove="Resources\Images\omer.jpg" />
+	  <None Remove="Resources\Images\robot.jpg" />
 	  <None Remove="Resources\Images\roni.jpg" />
 	  <None Remove="Resources\Images\yali.jpg" />
 	</ItemGroup>
