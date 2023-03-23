@@ -7,16 +7,35 @@
     xmlns:viewModels="clr-namespace:MvvmSample.ViewModels"
     x:DataType="viewModels:MainPageViewModel">
 
-    <Grid ColumnDefinitions="*,*" RowDefinitions="2*,*">
-
-        <CollectionView
+    <ScrollView>
+    <Grid  ColumnDefinitions="*,*" RowDefinitions="2*,*,*">
+        <!--הגדרת של הכפתורים  -->
+        <Button Grid.Row="1"
+            Grid.Column="1"
+            Margin="15"
+            Command="{Binding ClearDataCommand}"
+            HeightRequest="40"
+            Text="מחק נתונים"
+            WidthRequest="100" />
+            <Button Grid.Row="1" WidthRequest="100" HeightRequest="40" Text="הוסף תלמיד" Command="{Binding AddStudentCommand}"  Grid.Column="0"/>
+        <!--הגדרה של שדות הכנסת נתונים-->
+            <Grid  Grid.ColumnSpan="2" RowDefinitions="auto,auto,auto" ColumnDefinitions="*,*">
+                <Label HorizontalOptions="Center" TextDecorations="Underline" Text="שם"/>
+                <Label HorizontalOptions="Center" TextDecorations="Underline" Text="תאריך לידה" Grid.Column="1"/>
+                <Entry  Grid.Row="1" HorizontalOptions="Center" Text="{Binding Name}"  PlaceholderColor="Black" Placeholder="הכנס שם"/>
+                <DatePicker Grid.Column="1" Grid.Row="1"   HorizontalOptions="Center" Date="{Binding BirthDate}" MaximumDate="01/01/2010" MinimumDate="12/31/2005"/>
+            </Grid>
+        <!--ריענון הנתונים-->
+        <RefreshView Command="{Binding RefreshCommand}"  
+            Grid.Row="2" Grid.ColumnSpan="2" IsRefreshing="{Binding IsRefreshing}">
+            <!--הנתונים-->
+            <CollectionView 
             x:Name="collectionView"
-            Grid.ColumnSpan="2"
             Margin="15"
             ItemsSource="{Binding Students}">
             <CollectionView.EmptyView>
                 <StackLayout HorizontalOptions="Center">
-                    <Image
+                    <Image HorizontalOptions="Center"
                         BackgroundColor="Transparent"
                         HeightRequest="80"
                         Source="robot.jpg"
@@ -48,7 +67,7 @@
                                     Aspect="AspectFill"
                                     HeightRequest="80"
                                     HorizontalOptions="Center"
-                                    Source="{Binding Image}"
+                                    Source="{Binding Image}" 
                                     WidthRequest="80" />
                             </Border>
                             <Label
@@ -75,19 +94,8 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button
-            Margin="15"
-            Command="{Binding LoadDataCommand}"
-            HeightRequest="40"
-            Text="טען נתונים"
-            WidthRequest="100" />
-        <Button
-            Grid.Column="1"
-            Margin="15"
-            Command="{Binding ClearDataCommand}"
-            HeightRequest="40"
-            Text="מחק נתונים"
-            WidthRequest="100" />
-    </Grid>
-
+    </RefreshView>
+    
+        </Grid>
+    </ScrollView>
 </ContentPage>
