@@ -17,7 +17,7 @@
             HeightRequest="40"
             Text="מחק נתונים"
             WidthRequest="100" />
-            <Button Grid.Row="1" WidthRequest="100" HeightRequest="40" Text="הוסף תלמיד" Command="{Binding AddStudentCommand}"  Grid.Column="0"/>
+            <Button Grid.Row="1" WidthRequest="100" HeightRequest="40"  Text="הוסף תלמיד" Command="{Binding AddStudentCommand}"  Grid.Column="0"/>
         <!--הגדרה של שדות הכנסת נתונים-->
             <Grid  Grid.ColumnSpan="2" RowDefinitions="auto,auto,auto" ColumnDefinitions="*,*">
                 <Label HorizontalOptions="Center" TextDecorations="Underline" Text="שם"/>
@@ -26,7 +26,7 @@
                 <DatePicker Grid.Column="1" Grid.Row="1"   HorizontalOptions="Center" Date="{Binding BirthDate}" MaximumDate="01/01/2010" MinimumDate="12/31/2005"/>
             </Grid>
         <!--ריענון הנתונים-->
-        <RefreshView Command="{Binding RefreshCommand}"  
+        <RefreshView  Command="{Binding RefreshCommand}"  
             Grid.Row="2" Grid.ColumnSpan="2" IsRefreshing="{Binding IsRefreshing}">
             <!--הנתונים-->
             <CollectionView 

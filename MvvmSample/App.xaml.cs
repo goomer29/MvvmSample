@@ -1,8 +1,10 @@
-﻿namespace MvvmSample;
+﻿using MvvmSample.ViewModels;
+
+namespace MvvmSample;
 
 public partial class App : Application
 {
-	public App()
+	public App(MainPage p)
 	{
 		InitializeComponent();
 

@@ -4,13 +4,13 @@ namespace MvvmSample;
 
 public partial class MainPage : ContentPage
 {
-	
+   
 
-	public MainPage()
+    public MainPage(MainPageViewModel m)
 	{
 	
 		InitializeComponent();
-		this.BindingContext = new MainPageViewModel();
+		this.BindingContext = m;
 
 	}
 

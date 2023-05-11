@@ -63,7 +63,15 @@
 	  <None Remove="Resources\Images\omer.jpg" />
 	  <None Remove="Resources\Images\robot.jpg" />
 	  <None Remove="Resources\Images\roni.jpg" />
+	  <None Remove="Resources\Images\student.svg" />
+	  <None Remove="Resources\Images\teacher.svg" />
 	  <None Remove="Resources\Images\yali.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\TeacherPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
