@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:BindingToObject.Models"
     xmlns:viewModels="clr-namespace:MvvmSample.ViewModels"
-    x:DataType="viewModels:MainPageViewModel">
+    x:DataType="viewModels:MainPageViewModel" Shell.TitleColor="Wheat" >
+    
 
     <ScrollView>
     <Grid  ColumnDefinitions="*,*" RowDefinitions="2*,*,*">

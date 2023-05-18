@@ -35,15 +35,17 @@ namespace MvvmSample.ViewModels
 
         public MainPageViewModel()
         {
-            Students = new ObservableCollection<Student>(); 
-            LoadDataCommand=new Command(LoadData);
+            Students = new ObservableCollection<Student>();
+            LoadDataCommand = new Command(LoadData);
             ClearDataCommand = new Command(() => Students.Clear());
             RefreshCommand = new Command(LoadData);
-            AddStudentCommand = new Command(() => Students.Add(new Student() { BirthDate = BirthDate, Name = Name, Image = $"{Name}.jpg" }));
+            AddStudentCommand = new Command(async () =>
+            {
+                Students.Add(new Student() { BirthDate = BirthDate, Name = Name, Image = $"{Name}.jpg" });  await AppShell.Current.DisplayAlert("הוספת תלמיד", $"התלמיד.ה {Name}  נוספ.ה בהצלחה", "אישור"); Name = await AppShell.Current.DisplayPromptAsync("כמה אתה שמח?", " ?כמה את.ה שבע רצון מציון ההגשה שלך", "אישור", "ביטול", "הזן ציון", 2, Keyboard.Numeric);         });
            
         }
 
-        public void LoadData()
+        public void LoadData( )
         {
             Students.Clear();
            Students.Add(new Student() { BirthDate = new DateTime(2006,5,28), Name = "ג'ופיר", Image = "jofir.jpg" });
