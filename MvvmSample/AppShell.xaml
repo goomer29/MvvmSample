@@ -11,8 +11,24 @@
        TitleColor="Yellow"
        DisabledColor="#B4FFFFFF"
        UnselectedColor="#95FFFFFF">
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="main page">
+            <ShellContent Title="MainPage"
+                          Icon="deletbutton.svg"
+                          ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Title="People"
+             Icon="Peo">
+            <ShellContent Title="Students"
+                          Icon="student.svg"
+                      ContentTemplate="{DataTemplate views:StudentDetails}"/>
 
-    
-    
-    
+
+            <ShellContent Title="Teachers"
+                          Icon="teacher.svg"
+                          ContentTemplate="{DataTemplate views:TeacherPage}" />
+            
+        </Tab>
+        
+    </FlyoutItem>
 </Shell>
